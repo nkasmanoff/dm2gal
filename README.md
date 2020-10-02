@@ -25,7 +25,10 @@ Current methods include visualization of test subcube demonstrating model recons
 
 ## Results
 
-See images below.
+Power Spectrum           |  Bispectrum
+:-------------------------:|:-------------------------:
+![](https://github.com/nkasmanoff/dm2gal/blob/main/bin/power_spectrum.png) |  ![](https://github.com/nkasmanoff/dm2gal/blob/main/bin/bispectrum.png)
+
 
 
 ### Related Work
