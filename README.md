@@ -1,7 +1,7 @@
 # dm2gal
 
 
-Mapping the distribution of dark matter to stellar mass and galaxies. 
+Mapping the distribution of dark matter to galaxy stellar mass. 
 
 
 ## Methodology
