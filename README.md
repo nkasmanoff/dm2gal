@@ -27,7 +27,7 @@ Current methods include visualization of test subcube demonstrating model recons
 
 Power Spectrum           |  Bispectrum
 :-------------------------:|:-------------------------:
-![](https://github.com/nkasmanoff/dm2gal/blob/main/bin/power_spectrum.png) |  ![](https://github.com/nkasmanoff/dm2gal/blob/main/bin/bispectrum.png)
+![](https://github.com/nkasmanoff/dm2gal/blob/main/bin/power_spectrum.png) |  ![](https://github.com/nkasmanoff/dm2gal/blob/main/bin/bispectra.png)
 
 
 
@@ -39,5 +39,4 @@ https://github.com/jhtyip/From-Dark-Matter-to-Galaxies-with-Convolutional-Neural
 
 
 ### Acknowledgments
-pytorch-lightning 
-..
+Too many!
