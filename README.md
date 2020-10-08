@@ -10,7 +10,7 @@ Maps of cosmic structure produced by galaxy surveys are one of the key tools for
 
 We use data from the state-of-the-art magneto-hydrodynamic simulation IllustrisTNG100-1, and its gravity-only counterpart, IllustrisTNG100-1_DM, at present time. Those simulations contain, among other things, the position and mass of all particles in the simulations. Each simulation also contains a catalogue of dark matter halos with their properties (e.g. mass and position). We use the Cloud-in-Cell (CIC) mass assignment interpolation scheme to construct the 3D stellar mass and dark matter mass fields from the particle positions and masses of the hydrodynamic and gravity-only simulations, respectively. Since galaxies are expected to reside in dark matter subhalos, we facilitate the training of the network by using also a 3D field with the mass-weighted subhalo field, that we construct from the gravity-only simulation. The 3D fields span a volume of (75 h^{-1} Mpc)^3 (one Mpc corresponds to 3.26 million light-years) and they contain 2048^3 voxels. 
 
-
+To reproduce this project, please see the following steps: 
 
 ### 1. Download density field arrays. 
 	See dat/illustris-data
