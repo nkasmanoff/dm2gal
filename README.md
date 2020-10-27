@@ -42,6 +42,9 @@ Density Fields
 
 
 
+### Paper
+For the abstract submitted to the Machine Learning for Physical Sciences Workshop at NeurIPS 2020, please see https://www.overleaf.com/read/vfwvksvngszt. 
+
 
 ### Related Work
 
