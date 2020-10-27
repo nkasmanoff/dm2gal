@@ -36,7 +36,7 @@ Power Spectrum           |  Bispectrum
 ![](https://github.com/nkasmanoff/dm2gal/blob/main/bin/power_spectrum.png) |  ![](https://github.com/nkasmanoff/dm2gal/blob/main/bin/bispectra.png)
 
 
-Produced Density Fields           
+Density Fields           
 :-------------------------:
 ![](https://github.com/nkasmanoff/dm2gal/blob/main/bin/Density_Field.png)
 
