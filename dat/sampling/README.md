@@ -5,8 +5,8 @@ Using the density fields, iterate through and create input-target pairs. These p
 
 
 
-To run, 
+## To run: 
 
-	# python make_samples.py
+	### python make_samples.py
 
 

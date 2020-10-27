@@ -1,4 +1,4 @@
-# illustris
+# illustris-TNG
 
 This repo contains the scripts for downloading density fields from the IllustrisTNG. 
 
