@@ -1,73 +1,65 @@
 """
-CDM field.py
 
-
-This script computes a mass density field, using all particle information from the nbody simulation specified below. 
+Computes the dark matter mass density field from the hydrodynamic simulation.
 
 """
 
+
+#import dependencies
 import numpy as np
 import MAS_library as MASL
 import sys,os,h5py,time
 import units_library as UL
-import HI_library as HIL
-
-U = UL.units();  rho_crit = U.rho_crit #h^2 Msun/Mpc^3
-################################ INPUT ########################################
-snapnums = np.array([99])
-
-runs  = ['/simons/scratch/sgenel/Illustris_IllustrisTNG_public_data_release/L75n1820TNG_DM']
-fouts = ['TNG100-1DM']
 
 dims = 2048
+MAS  = 'CIC' 
 
-MAS = 'CIC'
-##############################################################################
+delta = np.zeros((dims,dims,dims), dtype=np.float32)
 
-for fout,run in zip(fouts,runs):
+U = UL.units();  rho_crit = U.rho_crit #h^2 Msun/Mpc^3
 
-    # do a loop over the different redshifts
-    for snapnum in snapnums:
+# read header
+FILE_TYPE = 'darkmatter/'
+root = '/scratch/gpfs/nk11/dm2gal/dat/illustris_tng/' + FILE_TYPE + 'snapshot/'
+# /scratch/gpfs/nk11/dm2gal/dat/illustris-data/hydrosim
 
-        # define the array hosting delta_HI and delta_m
-        delta_m  = np.zeros((dims,dims,dims), dtype=np.float32)
+prefix_out = 'stellarmass_TNG100-1'
 
-        # read header
-        snapshot = '%s/output/snapdir_%03d/snap_%03d'%(run,snapnum, snapnum)
-        f = h5py.File(snapshot+'.0.hdf5', 'r')
-        redshift = f['Header'].attrs[u'Redshift']
-        BoxSize  = f['Header'].attrs[u'BoxSize']/1e3  #Mpc/h
-        filenum  = f['Header'].attrs[u'NumFilesPerSnapshot']
-        Omega_m  = f['Header'].attrs[u'Omega0']
-        Omega_L  = f['Header'].attrs[u'OmegaLambda']
-        h        = f['Header'].attrs[u'HubbleParam']
-        Masses   = f['Header'].attrs[u'MassTable']*1e10  #Msun/h
-        f.close()
+f = h5py.File(root+os.listdir(root)[0],'r')
 
-        print 'Working with %s at redshift %.0f'%(run,redshift)
-        f_out = '%s_z=%.1f.hdf5'%(fout,round(redshift))
+redshift = f['Header'].attrs[u'Redshift']
+Omega_m  = f['Header'].attrs[u'Omega0']
+BoxSize  = f['Header'].attrs[u'BoxSize']/1e3  #Mpc/h
+Omega_L  = f['Header'].attrs[u'OmegaLambda']
+h        = f['Header'].attrs[u'HubbleParam']
+Nall     = f['Header'].attrs[u'Nsubgroups_Total']
 
-        # if file exists move on
-        if os.path.exists(f_out):  continue
+#print('Working with %s at redshift %.0f'%(run,redshift))
 
-        # do a loop over all subfiles in a given snapshot
-        M_total, start = 0.0, time.time()
-        for i in xrange(filenum):
+f_out = '%s_z=%.1f.hdf5'%(prefix_out,round(redshift))
 
-            snapshot = '%s/output/snapdir_%03d/snap_%03d.%d.hdf5'\
-                       %(run,snapnum,snapnum,i)
-            f = h5py.File(snapshot, 'r')
+do_Group = False
+do_Subhalo = True
+    # this is always going to be for a hydrodynamic simulation
+f.close()
+# do a loop over all subfiles in a given snapshot
+M_total, start = 0.0, time.time()
+for fof_subhalo_tab in os.listdir(root):
+    if fof_subhalo_tab != 'wget-log':
+        f = h5py.File(root+fof_subhalo_tab,'r')
+        #so all header data is the same. 
+                
 
-            ### CDM ###
-            pos  = (f['PartType1/Coordinates'][:]/1e3).astype(np.float32)        
-            mass = np.ones(pos.shape[0], dtype=np.float32)*Masses[1] #Msun/h
-            MASL.MA(pos, delta_m, BoxSize, MAS, mass)  #CDM
+        N_subhalos = f['Header'].attrs['Nsubgroups_ThisFile']
+        if N_subhalos > 0:
+            print("reading", fof_subhalo_tab)
+            pos = (f['Subhalo/SubhaloPos'][:]/1e3).astype(np.float32)
+            mass = f['Subhalo/SubhaloMassType'][:,4]*1e10   # Stellar mass
+            MASL.MA(pos, delta, BoxSize, MAS, mass)  #stars  
             M_total += np.sum(mass, dtype=np.float64)
-
-            f.close()
-
-            print '%03d -----> Omega_cdm = %.4f  : %6.0f s'\
-                %(i, M_total/(BoxSize**3*rho_crit), time.time()-start)
+                
+                
+        f.close()
 
         f = h5py.File(f_out,'w')
         f.create_dataset('delta_cdm',  data=delta_m)
