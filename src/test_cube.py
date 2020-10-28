@@ -26,11 +26,10 @@ import pandas as pd
 
 # load best
 
-#best_model_path = '/projects/QUIJOTE/Noah/logs/final/lightning_logs/version_5167072/checkpoints/epoch=8.ckpt'
+best_model_path = '/projects/QUIJOTE/Noah/logs/final/lightning_logs/version_5167072/checkpoints/epoch=8.ckpt'
 # in this repo version
-best_model_path = '../model/epoch=8.ckpt'
+#best_model_path = '../model/epoch=8.ckpt'
 
-# This one is the best so far, but still experimenting w others. 
 
 version = best_model_path.split('lightning_logs')[1][1:].split('/')[0]
 print(version)

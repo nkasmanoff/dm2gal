@@ -9,9 +9,11 @@ Fof simulations correspond to the friends-of-friends results, and basically mean
 
 The steps to collecting the corresponding data types are below. 
 
-Note that all of these scrips assume you have the path to the downloaded illustris files already saved somewhere locally. I have them in the path:
+Note that all of these scripts assume you have the path to the downloaded illustris files already saved. I have them in the path:
 
 root = 'PATH/dm2gal/illustris-data/SIM_TYPE/sim_files'
+
+To see how you obtain these items, check in the corresponding directories listed below and once you download these files, please run the following python commands. 
 
 ## dark_matter
 
@@ -28,4 +30,4 @@ root = 'PATH/dm2gal/illustris-data/SIM_TYPE/sim_files'
  ### python hydrosim.py
 
 
- The output of these scripts will dump an hdf5 file containing the 2048^3 version of that density field, which is partitioned into model ready chunks in dm2gal/dat/sampling.
+ The output of these dumps an hdf5 file containing the 2048^3 version of that density field, which we next split into input-output pairs that the model works with in  dm2gal/dat/sampling.
