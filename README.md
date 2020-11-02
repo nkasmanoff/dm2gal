@@ -16,7 +16,7 @@ To reproduce this project, please see the following steps:
 
 | Step | Description | File Path | File Name |
 | :---: | --- | :---: | :---: |
-| 1 | Download raw snapshot(s) from the IllustrisTNG site and make .hdf5 files | /dat/illustrist_tng/ | - |
+| 1 | Download raw snapshot(s) from the IllustrisTNG site and make .hdf5 files | /dat/illustris_tng/ | - |
 | 2 | Prepare .npy files of dark matter and stellar mass density field input-target pairs | /dat/sampling | make_samples.py |
 | 3 | Create mass bins used for weighted sampling of distribution for even training | /src | dataloader.py |
 | 4 | Train models | /src | predict_stellar_mass.py \& submit_jobs.py |
