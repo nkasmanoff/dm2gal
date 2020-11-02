@@ -12,20 +12,20 @@ We use data from the state-of-the-art magneto-hydrodynamic simulation IllustrisT
 
 To reproduce this project, please see the following steps: 
 
-### 1. Download density field arrays. 
-	See dat/illustris-data
+| Step | Description | File Path | File Name |
+| :---: | --- | :---: | :---: |
+| 1 | Download raw snapshot(s) from the IllustrisTNG site and make .hdf5 files | /dat/illustrist_tng/ | - |
+| 2 | Prepare .npy files of dark matter and stellar mass density field input-target pairs | /dat/sampling | make_samples.py |
+| 3 | Create mass bins used for weighted sampling of distribution for even training | /src | dataloader.py |
+| 4 | Train models | /src | predict_stellar_mass.py \& submit_jobs.py |
+| 5 | Generate the held-out test field with the trained model | /src | test_cube.py |
+| 6 | Prepare the stellar mass density field from the HOD algorithm | /src | hod.py |
+| 7 | Calculate and plot power spectra and bispectra [2] | /src/ | create_plots.py |
+| 8 | Further analysis on the outputs | /Notebooks/ | - |
 
-### 2. Generate sub-fields.
-	See dat/reconstruction-data
 
-### 3. Train model(s) 
-	See src/
+[1] With Python x.x.x and PyTorch x.x.x, see dm2gal.yaml for more details 
 
-### 4. Compute cosmological statistics
-	See src/
-
-
-Current methods include visualization of test subcube demonstrating model reconstruction capabilities, summary statistics,train loss curve, power spectrums, predicted vs target mass distribution, and more. 
 
 
 
