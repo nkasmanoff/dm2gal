@@ -14,7 +14,7 @@ import units_library as UL
 dims = 2048
 MAS  = 'CIC' 
 
-delta = np.zeros((dims,dims,dims), dtype=np.float32)
+delta_m = np.zeros((dims,dims,dims), dtype=np.float32)
 
 U = UL.units();  rho_crit = U.rho_crit #h^2 Msun/Mpc^3
 
@@ -44,20 +44,18 @@ do_Subhalo = True
 f.close()
 # do a loop over all subfiles in a given snapshot
 M_total, start = 0.0, time.time()
-for fof_subhalo_tab in os.listdir(root):
-    if fof_subhalo_tab != 'wget-log':
-        f = h5py.File(root+fof_subhalo_tab,'r')
+for snapshot_tab in os.listdir(root):
+    if snapshot_tab != 'wget-log':
+        f = h5py.File(root+snapshot_tab,'r')
         #so all header data is the same. 
                 
-
-        N_subhalos = f['Header'].attrs['Nsubgroups_ThisFile']
-        if N_subhalos > 0:
-            print("reading", fof_subhalo_tab)
-            pos = (f['Subhalo/SubhaloPos'][:]/1e3).astype(np.float32)
-            mass = f['Subhalo/SubhaloMassType'][:,4]*1e10   # Stellar mass
-            MASL.MA(pos, delta, BoxSize, MAS, mass)  #stars  
-            M_total += np.sum(mass, dtype=np.float64)
                 
+        ### CDM ###
+        pos  = (f['PartType1/Coordinates'][:]/1e3).astype(np.float32)        
+        mass = np.ones(pos.shape[0], dtype=np.float32)*Masses[1] #Msun/h
+        MASL.MA(pos, delta_m, BoxSize, MAS, mass)  #CDM
+        M_total += np.sum(mass, dtype=np.float64)            
+           
                 
         f.close()
 
