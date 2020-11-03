@@ -6,6 +6,7 @@ Computes the stellar mass density field from the hydrodynamic simulation.
 
 
 #import dependencies
+
 import numpy as np
 import MAS_library as MASL
 import sys,os,h5py,time
@@ -19,8 +20,8 @@ delta = np.zeros((dims,dims,dims), dtype=np.float32)
 U = UL.units();  rho_crit = U.rho_crit #h^2 Msun/Mpc^3
 
 # read header
-FILE_TYPE = 'hydrosim/'
-root = '/scratch/gpfs/nk11/dm2gal/dat/illustris/' + FILE_TYPE + 'fof_files/'
+FILE_TYPE = 'hydro/'
+root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/illustris_tng/' + FILE_TYPE + 'fof_files/'
 # /scratch/gpfs/nk11/dm2gal/dat/illustris-data/hydrosim
 
 prefix_out = 'stellarmass_TNG100-1'
