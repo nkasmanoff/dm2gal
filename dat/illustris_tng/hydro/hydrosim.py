@@ -45,7 +45,7 @@ do_Subhalo = True
 f.close()
 # do a loop over all subfiles in a given snapshot
 M_total, start = 0.0, time.time()
-for fof_subhalo_tab in os.listdir(root):
+for fof_subhalo_tab in os.listdir(root)[:]:
     if fof_subhalo_tab != 'wget-log':
         f = h5py.File(root+fof_subhalo_tab,'r')
         #so all header data is the same. 

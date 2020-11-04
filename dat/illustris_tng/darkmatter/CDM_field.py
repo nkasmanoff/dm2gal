@@ -20,7 +20,7 @@ U = UL.units();  rho_crit = U.rho_crit #h^2 Msun/Mpc^3
 
 # read header
 FILE_TYPE = 'darkmatter/'
-root = '/scratch/gpfs/nk11/dm2gal/dat/illustris_tng/' + FILE_TYPE + 'snapshot/'
+root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/illustris_tng/' + FILE_TYPE + 'snapshot/'
 # /scratch/gpfs/nk11/dm2gal/dat/illustris-data/hydrosim
 
 prefix_out = 'stellarmass_TNG100-1'
