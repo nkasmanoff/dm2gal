@@ -23,8 +23,8 @@ pos=list(np.arange(size,2000,1))
 
 
 #all dark matter particles n body sim
-dm_root = '/projects/QUIJOTE/Noah/dm2gal/dat/illustris/darkmatter/' #subhalo root 
-dm_pfield = dm_root+'TNG100-1DM_z=0.0.hdf5'   #note z is in here. 
+dm_root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/illustris_tng/darkmatter/' #subhalo root 
+dm_pfield = dm_root+'darkmatter_TNG100-1_z=0.0.hdf5'   #note z is in here. 
 delta_cdm = h5py.File(dm_pfield,'r')['delta_cdm'][:]
 delta_cdm = np.log10(1 + delta_cdm) #normalize
 
@@ -32,7 +32,7 @@ print("DM done.")
 
 
 #dark matter only subhalos
-dmsh_root = '/projects/QUIJOTE/Noah/dm2gal/dat/illustris/subhalos/' #subhalo root 
+dmsh_root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/illustris_tng/subhalos/' #subhalo root 
 dmsh_pfield = dmsh_root+'subhalos_TNG100-1_z=0.0.hdf5'   #note z is in here. 
 density_subhalo = h5py.File(dmsh_pfield,'r')['density'][:]
 density_subhalo = np.log10(1 + density_subhalo) #normalize
@@ -41,7 +41,7 @@ print("DMSH done.")
 
 
 # hydro galaxies 
-galaxies_root = '/projects/QUIJOTE/Noah/dm2gal/dat/illustris/hydro/' # galaxy root
+galaxies_root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/illustris_tng/hydro/' # galaxy root
 gal_pfield = galaxies_root+'stellarmass_TNG100-1_z=0.0.hdf5'
 density_gal = h5py.File(gal_pfield,'r')['density'][:]
 density_gal = np.log10(1 + density_gal)
@@ -76,8 +76,8 @@ for i,ID in enumerate(ranges):
         np.save(galaxy_path + 'galaxies'+box+'.npy',np.array([galaxy_voxel])) 
         np.save(subhalo_path+ 'subhalo'+box+'.npy',subhalo_voxel) 
 
-coords = pd.DataFrame()
-xs = xs[xs > 0]
+coords = pd.DataFrame() 
+xs = xs[xs > 0] # In case I made this array too large, this removes all empty values.ß
 ys = ys[ys > 0]
 zs = zs[zs > 0]
 
