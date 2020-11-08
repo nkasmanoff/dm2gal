@@ -53,7 +53,7 @@ print("Galxies done.")
 ranges=list(product(pos,repeat=3))
 
 
-data_dir = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/'
+data_dir = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/sampling/'
 dark_matter_path = data_dir + 'darkmatter/'
 galaxy_path = data_dir + 'hydro/'
 subhalo_path = data_dir + 'subhalos/'
