@@ -1,6 +1,7 @@
 from src.models.models import *
-from src.data_processing import gal_dataloader as dataloader
-from src.utils.utils import *
+#from src.data_processing import gal_dataloader as dataloader
+import dataloader as dataloader # for now 
+#from src.utils.utils import *
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

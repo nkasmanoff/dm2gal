@@ -8,9 +8,9 @@ After saved in processed dir, use a jupyter notebook to analyze.
 import Pk_library as PKL
 
 from src.models.models import *
-from src.data_processing import gal_dataloader as dataloader
-from src.utils.utils import *
-from predict_galaxy_mass import *
+import dataloader as dataloader
+#from src.utils.utils import *
+from predict_stellar_mass import *
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
