@@ -12,10 +12,10 @@ from torch.utils.data import Dataset, DataLoader
 from src.helper_functions import *
 
 #root = data_dir = '/scratch/nsk367/dm2gal/dat/' #overlying directory to data
-data_dir = '/projects/QUIJOTE/Noah/dm2gal/dat/reconstruction-data/central-prediction/' #overlying directory to data
-processed_path = root = '/projects/QUIJOTE/Noah/dm2gal/dat/processed/central-prediction/'
-dark_matter_path = data_dir + 'dark_matter/' # always the input, nbody simulation with all particles tracked
-galaxy_path = data_dir + 'stellar_mass/' # htotal - h subhalo (basically )
+data_dir = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/sampling/' #overlying directory to data
+processed_path = root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/processed/'
+dark_matter_path = data_dir + 'darkmatter/' # always the input, nbody simulation with all particles tracked
+galaxy_path = data_dir + 'hydro/' # htotal - h subhalo (basically )
 subhalo_path = data_dir + 'subhalos/'
 
 
