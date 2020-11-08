@@ -26,13 +26,15 @@ import pandas as pd
 
 # load best
 
-best_model_path = '/projects/QUIJOTE/Noah/logs/final/lightning_logs/version_5167072/checkpoints/epoch=8.ckpt'
+best_model_path = '/scratch/nsk367/pytorch-use/research/dm2gal/model/dm2gal_weights.ckpt' # '/projects/QUIJOTE/Noah/logs/final/lightning_logs/version_5167072/checkpoints/epoch=8.ckpt'
 # in this repo version
 #best_model_path = '../model/epoch=8.ckpt'
 
 
-version = best_model_path.split('lightning_logs')[1][1:].split('/')[0]
-print(version)
+version = 'final'
+
+#best_model_path.split('lightning_logs')[1][1:].split('/')[0]
+#print(version)
 #sys.exit()
 model = Galaxy_Model.load_from_checkpoint(best_model_path)    #masking_model, using the latest version. 
 
@@ -42,10 +44,10 @@ device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 model.to(device)
 print("Device = ", device)
 
-print("Loading in (what will be) best model...")
+print("Loading in  best model...")
 print("best model path = ", best_model_path)
-root = '/projects/QUIJOTE/Noah/dm2gal/dat/processed/'
-data_dir = '/projects/QUIJOTE/Noah/dm2gal/dat/reconstruction-data/' #overlying directory to data
+root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/processed/'
+data_dir = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/sampling/' #overlying directory to data
 dark_matter_path = data_dir + 'dark_matter/' # always the input, nbody simulation with all particles tracked
 galaxy_path = data_dir + 'stellar_mass/' # htotal - h subhalo (basically )
 subhalo_path = data_dir + 'subhalos/'
