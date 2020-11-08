@@ -9,6 +9,4 @@ setup(name='src',
       install_requires=[
             'pytorch-lightning'
       ],
-      packages=find_packages()
-      )(base) [nk11@tigercpu dm2gal]$ 
-
+      packages=find_packages())
