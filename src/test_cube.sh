@@ -6,7 +6,7 @@
 #SBATCH --time=72:00:00
 ##SBATCH --gres=gpu:k80:1
 #SBATCH --gres=gpu:1
-#SBATCH --mem=80GB
+#SBATCH --mem=180GB
 #SBATCH --job-name=test_cube
 #SBATCH --mail-type=END
 #SBATCH --output=slurm_%j.out
