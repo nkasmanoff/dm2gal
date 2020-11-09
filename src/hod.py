@@ -137,6 +137,21 @@ avg_nbody_subhalos = sh_df.loc[sh_df['central_flag'] == 1].groupby('target_bin')
 avg_nbody_subhalos = avg_nbody_subhalos.reset_index()
 
 
+
+nbody = []
+hydro = []
+for target_bin in range(50):
+    nbody_count = sh_df.loc[sh_df['target_bin'] == target_bin].shape[0]
+    hydro_count = hod_df.loc[hod_df['target_bin'] == target_bin].shape[0]
+    
+    #print(nbody_count, hydro_count)
+    nbody.append(nbody_count)
+    hydro.append(hydro_count)
+
+
+
+
+
 sh_hod_df = pd.DataFrame()
 for bin_central,g in sh_df.groupby(['target_bin','central_flag']):
     target_bin,central_bool = bin_central
