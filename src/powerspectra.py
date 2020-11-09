@@ -10,7 +10,7 @@ import h5py
 
 
 test_cube = np.load('../dat/processed/test_cube_target.npy')
-pred_cube = np.load('../dat/processed/test_cube_version_5167072_prediction.npy')
+pred_cube = np.load('../dat/processed/test_cube_final_prediction.npy')
 benchmark_cube = np.load('../dat/processed/benchmark_cube.npy')
 
 
@@ -27,8 +27,8 @@ threads = 32
 Pk = PKL.Pk(test_cube, BoxSize, axis, MAS, threads)
 k       = Pk.k3D
 Pk0     = Pk.Pk[:,0] #monopole
-np.save('../dat/analysis/target_k_values.npy',k)
-np.save('../dat/analysis/target_Pk0_values.npy',Pk0)
+np.save('../dat/processed/target_k_values.npy',k)
+np.save('../dat/processed/target_Pk0_values.npy',Pk0)
 
 
 Pk = PKL.Pk(pred_cube, BoxSize, axis, MAS, threads)
@@ -36,8 +36,8 @@ Pk = PKL.Pk(pred_cube, BoxSize, axis, MAS, threads)
 # 3D P(k)
 k       = Pk.k3D
 Pk0     = Pk.Pk[:,0] #monopole
-np.save('../dat/analysis/'+'pred_k_values.npy',k)
-np.save('../dat/analysis/'+'pred_Pk0_values.npy',Pk0)
+np.save('../dat/processed/'+'pred_k_values.npy',k)
+np.save('../dat/processed/'+'pred_Pk0_values.npy',Pk0)
 
 
 Pk = PKL.Pk(benchmark_cube, BoxSize, axis, MAS, threads)
@@ -45,8 +45,8 @@ Pk = PKL.Pk(benchmark_cube, BoxSize, axis, MAS, threads)
 # 3D P(k)
 k       = Pk.k3D
 Pk0     = Pk.Pk[:,0] #monopole
-np.save('../dat/analysis/'+'hod_k_values.npy',k)
-np.save('../dat/analysis/'+'hod_Pk0_values.npy',Pk0)
+np.save('../dat/processed/'+'hod_k_values.npy',k)
+np.save('../dat/processed/'+'hod_Pk0_values.npy',Pk0)
 
 
 print("Done! ")

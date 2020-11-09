@@ -12,7 +12,7 @@ import h5py
 
 k = np.load('../dat/analysis/target_k_values.npy')
 Pk_target  = np.load('../dat/analysis/target_Pk0_values.npy')
-Pk_pred = np.load('../dat/analysis/version_5167072pred_Pk0_values.npy')
+Pk_pred = np.load('../dat/analysis/pred_Pk0_values.npy')
 
 Pk_benchmark = np.load('../dat/analysis/benchmark_Pk0_values.npy')
 
@@ -93,10 +93,9 @@ plt.savefig('../bin/bispectra.png')
 
 # PDF
 
-test_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/test_cube_target.npy')
-
-pred_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/test_cube_version_5167072_prediction.npy')
-benchmark_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/benchmark_cube.npy')
+test_cube = np.load('../dat/processed/test_cube_target.npy')
+pred_cube = np.load('../dat/processed/test_cube_final_prediction.npy')
+benchmark_cube = np.load('../dat/processed/benchmark_cube.npy')
 
 
 pred_cube = pred_cube[pred_cube != 0] 

@@ -26,7 +26,7 @@ import pandas as pd
 
 # load best
 
-best_model_path = '/scratch/nsk367/pytorch-use/research/dm2gal/model/dm2gal_weights.ckpt' # '/projects/QUIJOTE/Noah/logs/final/lightning_logs/version_5167072/checkpoints/epoch=8.ckpt'
+best_model_path = '../model/dm2gal_weights.ckpt' # '/projects/QUIJOTE/Noah/logs/final/lightning_logs/version_5167072/checkpoints/epoch=8.ckpt'
 # in this repo version
 #best_model_path = '../model/epoch=8.ckpt'
 

@@ -10,9 +10,9 @@ import h5py
 
 
 
-test_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/central-prediction/test_cube_target.npy')
-pred_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/central-prediction/test_cube_version_5167072_prediction.npy')
-benchmark_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/central-prediction/benchmark_cube.npy')
+test_cube = np.load('../dat/processed/test_cube_target.npy')
+pred_cube = np.load('../dat/processed/test_cube_final_prediction.npy')
+benchmark_cube = np.load('../dat/processed/central-prediction/benchmark_cube.npy')
 
 
 BoxSize = 31.82373046875 #Size of the density field in Mpc/h
@@ -37,8 +37,8 @@ Pk = Bk_target.Pk    #power spectrum
 
 
 # save bispectrum and k
-np.save('../dat/analysis/'+'target_k_values.npy',k)
-np.save('../dat/analysis/'+'target_Bk_values.npy',Bk)
+np.save('../dat/processed/'+'target_theta_values.npy',theta)
+np.save('../dat/processed/'+'target_Bk_values.npy',Bk)
 
 # compute dm2gak bispectrum
 
@@ -50,8 +50,8 @@ Qk = Bk_pred.Q     #reduced bispectrum
 k  = Bk_pred.k_all #k-bins for power spectrum
 Pk = Bk_pred.Pk    #power spectrum
 
-np.save('../dat/analysis/'+'pred_k_values.npy',k)
-np.save('../dat/analysis/'+'pred_Bk_values.npy',Bk)
+np.save('../dat/processed/'+'pred_theta_values.npy',theta)
+np.save('../dat/processed/'+'pred_Bk_values.npy',Bk)
 
 
 
@@ -63,5 +63,5 @@ Qk = Bk_benchmark.Q     #reduced bispectrum
 k  = Bk_benchmark.k_all #k-bins for power spectrum
 Pk = Bk_benchmark.Pk    #power spectrum
 
-np.save('../dat/analysis/'+'benchmark_k_values.npy',k)
-np.save('../dat/analysis/'+'benchmark_Bk_values.npy',Bk)
+np.save('../dat/processed/'+'benchmark_theta_values.npy',theta)
+np.save('../dat/processed/'+'benchmark_Bk_values.npy',Bk)

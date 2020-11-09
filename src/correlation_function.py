@@ -11,9 +11,9 @@ import h5py
 import sys
 
 
-test_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/central-prediction/test_cube_target.npy')
-pred_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/central-prediction/test_cube_version_5167072_prediction.npy')
-benchmark_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/central-prediction/benchmark_cube.npy')
+test_cube = np.load('../dat/processed/central-prediction/test_cube_target.npy')
+pred_cube = np.load('../dat/processed/central-prediction/test_cube_final_prediction.npy')
+benchmark_cube = np.load('../dat/processed/central-prediction/benchmark_cube.npy')
 
 
 BoxSize = 31.82373046875 #Size of the density field in Mpc/h
@@ -30,8 +30,8 @@ xi0    = CF.xi[:,0]  #correlation function (monopole)
 #xi4    = CF.xi[:,2]  #correlation function (hexadecapole)
 
 # save correlation function and r
-np.save('../analysis/'+'target_r_values.npy',r)
-np.save('../analysis/'+'target_xi0_values.npy',xi0)
+np.save('../processed/target_r_values.npy',r)
+np.save('../processed/target_xi0_values.npy',xi0)
 
 # compute dm2gal corr func
 CF     = PKL.Xi(pred_cube, BoxSize, MAS, axis, threads)
@@ -41,8 +41,8 @@ xi0    = CF.xi[:,0]  #correlation function (monopole)
 #xi4    = CF.xi[:,2]  #correlation function (hexadecapole)
 
 # save correlation function and r
-np.save('../analysis/'+'pred_r_values.npy',r)
-np.save('../analysis/'+'pred_xi0_values.npy',xi0)
+np.save('../processed/pred_r_values.npy',r)
+np.save('../processed/pred_xi0_values.npy',xi0)
 
 
 # compute benchmark corr func
@@ -54,5 +54,5 @@ xi0    = CF.xi[:,0]  #correlation function (monopole)
 #xi4    = CF.xi[:,2]  #correlation function (hexadecapole)
 
 # save correlation function and r
-np.save('../analysis/'+'benchmark_r_values.npy',r)
-np.save('../analysis/'+'benchmark_xi0_values.npy',xi0)
+np.save('../processed/benchmark_r_values.npy',r)
+np.save('../processed/benchmark_xi0_values.npy',xi0)
