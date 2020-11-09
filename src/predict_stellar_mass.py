@@ -66,7 +66,7 @@ class Galaxy_Model(pl.LightningModule):
         avg_val_loss = torch.stack([x['val_loss'] for x in outputs]).mean()
         val_tensorboard_logs = {'avg_val_loss': avg_val_loss}
 
-        processed_path = root  = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/processed/'
+        processed_path = root  = '../dat/processed/'
         #valid_Pk = generate_valid_Pk(self,self.valid_loader)
         valid_coords = pd.read_csv(processed_path + 'valid_coords.csv')
         val_files = valid_coords['Coordinates'].values #in test or validation mode, use everything to recreate our mini universe.

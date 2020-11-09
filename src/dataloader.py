@@ -12,8 +12,8 @@ from torch.utils.data import Dataset, DataLoader
 from src.helper_functions import *
 
 #root = data_dir = '/scratch/nsk367/dm2gal/dat/' #overlying directory to data
-data_dir = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/sampling/' #overlying directory to data
-processed_path = root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/processed/'
+data_dir = '../dat/sampling/' #overlying directory to data
+processed_path = root = '../dat/processed/'
 dark_matter_path = data_dir + 'darkmatter/' # always the input, nbody simulation with all particles tracked
 galaxy_path = data_dir + 'hydro/' # htotal - h subhalo (basically )
 subhalo_path = data_dir + 'subhalos/'
