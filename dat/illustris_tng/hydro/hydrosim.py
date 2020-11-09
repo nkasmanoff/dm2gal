@@ -21,7 +21,7 @@ U = UL.units();  rho_crit = U.rho_crit #h^2 Msun/Mpc^3
 
 # read header
 FILE_TYPE = 'hydro/'
-root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/illustris_tng/' + FILE_TYPE + 'fof_files/'
+root = '../../dat/illustris_tng/' + FILE_TYPE + 'fof_files/'
 # /scratch/gpfs/nk11/dm2gal/dat/illustris-data/hydrosim
 
 prefix_out = 'stellarmass_TNG100-1'
