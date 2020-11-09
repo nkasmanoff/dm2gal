@@ -21,13 +21,13 @@ delta = np.zeros((dims,dims,dims), dtype=np.float32)
 U = UL.units();  rho_crit = U.rho_crit #h^2 Msun/Mpc^3
 
 # read header
-FILE_TYPE = 'hydro/' #or subhalos
+FILE_TYPE = '/hydro/' #or subhalos
 
 #TODO: Before this, cp from fof_files into a new folder made @ ../dat/illustris_tng/hydro/groupcat/groups_099
 # Once done, you can use TNG's illustris-python code to read in this data for hod computation
 
 
-root = '../dat/illustris_tng' + FILE_TYPE + 'groupcat/groups_099/'
+root = '../dat/illustris_tng/' + FILE_TYPE + 'groupcat/groups_099/'
 basePath = '../dat/illustris_tng' + FILE_TYPE + 'groupcat'
 # /scratch/gpfs/nk11/dm2gal/dat/illustris-data/hydrosim
 
@@ -100,8 +100,8 @@ hod_df = hod_df.loc[hod_df['galaxy_mass'] > 0] #conditional
 # read header
 FILE_TYPE = 'subhalos/' 
 
-root = '../dat/illustris_tng' + FILE_TYPE + 'groupcat/groups_099/'
-basePath = '../dat/illustris_tng' + FILE_TYPE + 'groupcat'
+root = '../dat/illustris_tng/' + FILE_TYPE + 'groupcat/groups_099/'
+basePath = '../dat/illustris_tng/' + FILE_TYPE + 'groupcat'
 
 r = il.groupcat.load(basePath,snapNum=99)
 
