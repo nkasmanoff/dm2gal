@@ -169,7 +169,10 @@ for bin_central,g in sh_df.groupby(['target_bin','central_flag']):
     g['galaxy_mass'] = gal_mass 
     sh_hod_df = pd.concat([sh_hod_df,g],axis=0)
     
-    
+ 
+
+mass = sh_hod_df['galaxy_mass'].values
+pos = sh_hod_df[['x','y','z']].values   
 
 dims = 2048
 MAS  = 'CIC'
