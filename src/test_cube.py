@@ -48,8 +48,8 @@ print("Loading in  best model...")
 print("best model path = ", best_model_path)
 root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/processed/'
 data_dir = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/sampling/' #overlying directory to data
-dark_matter_path = data_dir + 'dark_matter/' # always the input, nbody simulation with all particles tracked
-galaxy_path = data_dir + 'stellar_mass/' # htotal - h subhalo (basically )
+dark_matter_path = data_dir + 'darkmatter/' # always the input, nbody simulation with all particles tracked
+galaxy_path = data_dir + 'hydro/' # htotal - h subhalo (basically )
 subhalo_path = data_dir + 'subhalos/'
 
 test_coords = pd.read_csv(root + 'test_coords.csv')

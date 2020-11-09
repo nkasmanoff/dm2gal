@@ -9,9 +9,9 @@ import numpy as np
 import h5py
 
 
-test_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/test_cube_target.npy')
-pred_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/test_cube_version_5167072_prediction.npy')
-benchmark_cube = np.load('/projects/QUIJOTE/Noah/dm2gal/dat/processed/benchmark_cube.npy')
+test_cube = np.load('../dat/processed/test_cube_target.npy')
+pred_cube = np.load('../dat/processed/test_cube_version_5167072_prediction.npy')
+benchmark_cube = np.load('../dat/processed/benchmark_cube.npy')
 
 
 BoxSize = 31.82373046875 #Size of the density field in Mpc/h
