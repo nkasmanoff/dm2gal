@@ -20,7 +20,7 @@ U = UL.units();  rho_crit = U.rho_crit #h^2 Msun/Mpc^3
 
 # read header
 FILE_TYPE = 'subhalos/'
-root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/illustris_tng/' + FILE_TYPE + 'fof_files/'
+root = '/scratch/nsk367/pytorch-use/research/dm2gal/dat/illustris_tng/' + FILE_TYPE + 'groupcat/groups_099/'
 # /scratch/gpfs/nk11/dm2gal/dat/illustris-data/subhalos
 
 prefix_out = 'subhalos_TNG100-1'

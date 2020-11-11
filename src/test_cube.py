@@ -59,10 +59,10 @@ print("loading in coords...")
 #Load the actual files in here!
 
 files = test_coords['Coordinates'].values #in test or validation mode, use everything to recreate our mini universe.
-maps_mean = np.load(root + 'mean_maps.npy')#5.20168457 #np.load(root + 'mean_maps.npy')
-maps_std = np.load(root + 'std_maps.npy')#3.11864378 #np.load(root + 'std_maps.npy')
-shmaps_mean = np.load(root + 'mean_shmaps.npy') #0.41816423 #np.load(root + 'mean_shmaps.npy')
-shmaps_std = np.load(root + 'std_shmaps.npy') #1.73515605 #np.load(root + 'std_shmaps.npy')
+maps_mean = 5.20168457 #np.load(root + 'mean_maps.npy')
+maps_std = 3.11864378 #np.load(root + 'std_maps.npy')
+shmaps_mean = 0.41816423 #np.load(root + 'mean_shmaps.npy')
+shmaps_std = 1.73515605 #np.load(root + 'std_shmaps.npy')
 
 
 params_mean, params_std = 8.750728, 0.60161114 # only with galaxies > 1e8 solar masses 
