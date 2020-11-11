@@ -24,7 +24,8 @@ pos=list(np.arange(size,2000,1))
 
 #all dark matter particles n body sim
 dm_root = '../illustris_tng/darkmatter/' #subhalo root 
-dm_pfield = dm_root+'TNG100-1_z=0.0.hdf5'   #note z is in here. 
+#dm_pfield = dm_root+'TNG100-1_z=0.0.hdf5'   #note z is in here. 
+dm_pfield = dm_root + 'TNG100-1_CDM_z=0.0.hdf5'
 delta_cdm = h5py.File(dm_pfield,'r')['delta_cdm'][:]
 delta_cdm = np.log10(1 + delta_cdm) #normalize
 

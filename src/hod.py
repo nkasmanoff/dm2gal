@@ -169,10 +169,10 @@ for bin_central,g in sh_df.groupby(['target_bin','central_flag']):
     g['galaxy_mass'] = gal_mass 
     sh_hod_df = pd.concat([sh_hod_df,g],axis=0)
     
- 
+print("Onto Pylians part...") 
 
-mass = sh_hod_df['galaxy_mass'].values
-pos = sh_hod_df[['x','y','z']].values   
+mass = sh_hod_df['galaxy_mass'].values.astype(np.float32)
+pos = sh_hod_df[['x','y','z']].values.astype(np.float32)
 
 dims = 2048
 MAS  = 'CIC'
@@ -190,7 +190,7 @@ Omega_L  = f['Header'].attrs[u'OmegaLambda']
 h        = f['Header'].attrs[u'HubbleParam']
 Nall     = f['Header'].attrs[u'Nsubgroups_Total']
 
-
+print("Creating delta field")
 MASL.MA(pos, delta, BoxSize, MAS, mass)  #stars
 M_total = np.sum(mass, dtype=np.float64)
 
