@@ -11,9 +11,9 @@ import h5py
 import sys
 
 
-test_cube = np.load('../dat/processed/central-prediction/test_cube_target.npy')
-pred_cube = np.load('../dat/processed/central-prediction/test_cube_final_prediction.npy')
-benchmark_cube = np.load('../dat/processed/central-prediction/benchmark_cube.npy')
+test_cube = np.load('../dat/processed/test_cube_target.npy')
+pred_cube = np.load('../dat/processed/test_cube_final_prediction.npy')
+benchmark_cube = np.load('../dat/processed/benchmark_cube.npy')
 
 
 BoxSize = 31.82373046875 #Size of the density field in Mpc/h
