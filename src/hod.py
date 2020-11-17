@@ -197,4 +197,4 @@ M_total = np.sum(mass, dtype=np.float64)
 # Now the region corresponding to where the test set is, all that's
 # relevant from this method. 
 benchmark_cube = delta[64:940,64:940,64:940]
-np.save('../dat/processed/benchmark_cube.npy')
+np.save('../dat/processed/benchmark_cube.npy',benchmark_cube)
