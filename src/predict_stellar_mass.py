@@ -81,7 +81,7 @@ class Galaxy_Model(pl.LightningModule):
         cube_target = np.zeros(shape = (cube_len,cube_len,cube_len)) 
         ParamsPred = []
         ParamsTrue = []
-        for i, maps_params in enumerate(self.to_cube_valid_loader): 
+        for i, maps_params in enumerate(self.valid_loader): 
             maps = maps_params[0]
             params = maps_params[1]
 
