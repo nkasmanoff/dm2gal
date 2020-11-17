@@ -1,6 +1,6 @@
 """
 
-Computes the dark matter mass density field from the hydrodynamic simulation.
+Computes the full dark matter mass density field from the n-body simulation.
 
 """
 
@@ -51,8 +51,9 @@ for snapshot_tab in os.listdir(root):
               
                 
         ### CDM ###
-        pos  = (f['PartType1/Coordinates'][:]/1e3).astype(np.float32)        
-        mass = np.ones(pos.shape[0], dtype=np.float32)#   *Masses[1] #Msun/h
+        pos  = (f['PartType1/Coordinates'][:]/1e3).astype(np.float32)
+        #Masses = f['Mass']
+        mass = np.ones(pos.shape[0], dtype=np.float32)*Masses[1] #Msun/h
         MASL.MA(pos, delta_m, BoxSize, MAS, mass)  #CDM
         M_total += np.sum(mass, dtype=np.float64)            
            
