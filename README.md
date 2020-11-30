@@ -1,6 +1,6 @@
 # dm2gal
 
-This repo houses the code used to produce contains the work used to create "dm2gal: Mapping Dark Matter to Galaxies with Neural Networks". This paper has been accepted to the NeurIPS Machine Learning and the Physical Sciences Workshop 2020.
+This repo houses the code used to produce the work "dm2gal: Mapping Dark Matter to Galaxies with Neural Networks". This paper has been accepted to the NeurIPS Machine Learning and the Physical Sciences Workshop 2020.
 
 
 
