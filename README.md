@@ -24,8 +24,8 @@ To reproduce this project, please see the following steps:
 | 4 | Train models | /src | predict_stellar_mass.py \& submit_jobs.py |
 | 5 | Generate the held-out test field with the trained model | /src | test_cube.py |
 | 6 | Prepare the stellar mass density field from the HOD algorithm | /src | hod.py |
-| 7 | Calculate and plot power spectra and bispectra [2] | /src/ | create_plots.py |
-| 8 | Further analysis on the outputs | /Notebooks/ | - |
+| 7 | Calculate and plot power spectra and bispectra [2] | /src | create_plots.py |
+| 8 | Further analysis on the outputs | /Notebooks | - |
 
 
 [1] With Python 3.7.7, PyTorch 1.5.0, and Pytorch-Lightning 0.7.5. See env.yaml for more details 

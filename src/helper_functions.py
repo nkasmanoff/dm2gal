@@ -81,7 +81,7 @@ def get_mode(z):
     
     test
     """
-    if 64 <= z['x'] <= 940 and  64 <= z['y'] <= 940 and  64 <= z['z'] <= 940: # To create a test space of approximately 32 Mpc/h
+    if 64 <= z['x'] <= 932 and  64 <= z['y'] <= 932 and  64 <= z['z'] <= 932: # To create a test space of approximately 32 Mpc/h
         tag = 'test'
 
     elif 1000 <= z['x'] <= 1800 and  1000 <= z['y'] <= 1800 and  1000 <= z['z'] <= 1800: # To create a valid space of approximately 30 Mpc/h
