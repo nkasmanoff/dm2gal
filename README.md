@@ -28,7 +28,7 @@ To reproduce this project, please see the following steps:
 | 8 | Further analysis on the outputs | /Notebooks/ | - |
 
 
-[1] With Python x.x.x, PyTorch x.x.x, and Pytorch-Lightning x.x.x. See dm2gal.yaml for more details 
+[1] With Python 3.7.7, PyTorch 1.5.0, and Pytorch-Lightning 0.7.5. See env.yaml for more details 
 
 
 
